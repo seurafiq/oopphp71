@@ -16,4 +16,4 @@ Route::get('contact-mail',[
 ]);
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'HomeController@index')->name('home');

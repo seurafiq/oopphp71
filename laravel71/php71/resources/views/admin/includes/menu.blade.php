@@ -18,10 +18,10 @@
             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Category<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="flot.html">Add category</a>
+                    <a href="{{url('/category/add')}}">Add Category</a>
                 </li>
                 <li>
-                    <a href="morris.html">Manage Category</a>
+                    <a href="{{url('/category/manage')}}">Manage Category</a>
                 </li>
             </ul>
             <!-- /.nav-second-level -->

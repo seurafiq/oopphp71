@@ -45,7 +45,7 @@
     <div id="page-wrapper">
 
 
-                                        @yield('content')
+                                        @yield('body')
 
 
         <!-- /.row -->

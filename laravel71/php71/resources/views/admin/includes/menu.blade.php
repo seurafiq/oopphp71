@@ -27,6 +27,30 @@
             <!-- /.nav-second-level -->
         </li>
         <li>
+            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Brand<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+                <li>
+                    <a href="{{route('add-brand')}}">Add Brand</a>
+                </li>
+                <li>
+                    <a href="{{route('manage-brand')}}">Manage Brand</a>
+                </li>
+            </ul>
+            <!-- /.nav-second-level -->
+        </li>
+        <li>
+            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Product Info<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+                <li>
+                    <a href="{{route('add-product')}}">Add Product</a>
+                </li>
+                <li>
+                    <a href="{{route('manage-product')}}">Manage Product</a>
+                </li>
+            </ul>
+            <!-- /.nav-second-level -->
+        </li>
+        <li>
             <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
         </li>
         <li>

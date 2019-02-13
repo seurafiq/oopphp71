@@ -54,6 +54,61 @@ Route::get('/category/delete/{id}',[
 
 
 
+/*Brand manage starts here*/
+Route::get('/brand/add/',[
+    'uses' => 'BrandController@index',
+    'as' => 'add-brand'
+]);
+Route::get('/brand/manage/',[
+    'uses' => 'BrandController@manageBrandInfo',
+    'as' => 'manage-brand'
+]);
+Route::post('/brand/save/',[
+    'uses' => 'BrandController@saveBrandInfo',
+    'as' => 'new-brand'
+]);
+Route::get('/brand/unpublished/{id}',[
+    'uses' => 'BrandController@unPublishedBrandInfo',
+    'as' => 'unpublished-brand'
+]);
+Route::get('/brand/published/{id}',[
+    'uses' => 'BrandController@publishedBrandInfo',
+    'as' => 'published-brand'
+]);
+Route::get('/brand/edit/{id}',[
+    'uses' => 'BrandController@editBrandInfo',
+    'as' => 'edit-brand'
+]);
+Route::post('/brand/update/',[
+    'uses' => 'BrandController@updateBrandInfo',
+    'as' => 'update-brand'
+]);
+
+Route::get('/brand/delete/{id}',[
+    'uses' => 'BrandController@deleteBrandInfo',
+    'as' => 'delete-brand'
+]);
+/*Brand manage ends here*/
+
+
+
+/*Product Info starts here*/
+Route::get('/product/add/',[
+    'uses' => 'ProductController@index',
+    'as' => 'add-product'
+]);
+Route::get('/product/manage/',[
+    'uses' => 'ProductController@index',
+    'as' => 'manage-product'
+]);
+Route::post('/product/save/',[
+    'uses' => 'ProductController@saveProduct',
+    'as' => 'new-product'
+]);
+/*Product Info ends here*/
+
+
+
 
 Auth::routes();
 

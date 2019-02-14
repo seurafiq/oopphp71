@@ -98,7 +98,7 @@ Route::get('/product/add/',[
     'as' => 'add-product'
 ]);
 Route::get('/product/manage/',[
-    'uses' => 'ProductController@index',
+    'uses' => 'ProductController@manageProduct',
     'as' => 'manage-product'
 ]);
 Route::post('/product/save/',[

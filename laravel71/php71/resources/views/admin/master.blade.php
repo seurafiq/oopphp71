@@ -19,6 +19,11 @@
     <!-- SB Admin CSS - Include with every page -->
     <link href="{{asset('admin')}}/css/sb-admin.css" rel="stylesheet">
 
+    <script src="{{asset('/')}}admin/ckeditor/ckeditor.js"></script>
+    <script src="{{ asset('/') }}admin/ckeditor/samples/js/sample.js"></script>
+    <link rel="stylesheet" href="{{ asset('/') }}admin/ckeditor/samples/css/samples.css">
+    <link rel="stylesheet" href="{{ asset('/') }}admin/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css">
+
 </head>
 
 <body>
@@ -69,6 +74,11 @@
 
 <!-- Page-Level Demo Scripts - Dashboard - Use for reference -->
 <script src="{{asset('admin')}}/js/demo/dashboard-demo.js"></script>
+
+
+<script>
+    initSample();
+</script>
 
 </body>
 

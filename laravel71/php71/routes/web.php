@@ -5,15 +5,28 @@ Route::get('/',[
     'as'  => '/'
 ]);
 
-Route::get('/category-product',[
+Route::get('/category-product/{id}',[
     'uses' => 'NewShopController@categoryProduct',
     'as'  => 'category-product'
 ]);
+//Route::get('/home',[
+//    'uses' => 'NewShopController@home',
+//    'as'  => '/'
+//]);
 
-Route::get('contact-mail',[
-    'uses' => 'NewShopController@contactAndMail',
-    'as' => 'contact-mail'
+Route::get('product-details/{id}',[
+    'uses' => 'NewShopController@productDetails',
+    'as' => 'product-details'
 ]);
+
+
+
+
+
+
+
+
+
 
 /*category manage starts here*/
 Route::get('/category/add',[

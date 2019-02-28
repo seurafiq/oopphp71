@@ -39,7 +39,20 @@
                                 <td>{{ $product->product_price }}</td>
                                 <td>{{ $product->product_quantity }}</td>
                                 <td>{{ $product->publication_status }}</td>
-                                <td>Demo</td>
+                                <td>
+                                    <a href="" class="btn btn-info btn-xs" title="View Details">
+                                        <span class="glyphicon glyphicon-zoom-in"></span>
+                                    </a>
+                                    <a href="" class="btn btn-primary btn-xs" title="Published">
+                                        <span class="glyphicon glyphicon-arrow-up"></span>
+                                    </a>
+                                    <a href="{{ route('edit-product',['id'=>$product->id]) }}" class="btn btn-success btn-xs" title="Edit">
+                                        <span class="glyphicon glyphicon-edit"></span>
+                                    </a>
+                                    <a href="" class="btn btn-danger btn-xs">
+                                        <span class="glyphicon glyphicon-trash" title="Delete"></span>
+                                    </a>
+                                </td>
                             </tr>
                                 @endforeach
 

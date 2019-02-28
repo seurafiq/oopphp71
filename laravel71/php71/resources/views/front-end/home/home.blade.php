@@ -101,7 +101,7 @@
                         <div class="grid-arr">
                             <div  class="grid-arrival">
                                 <figure>
-                                    <a href="{{ route('product-details',['id'=>$newProduct->id]) }}" class="new-gri">
+                                    <a href="{{ route('product-details',['id'=>$newProduct->id, 'name'=>$newProduct->product_name]) }}" class="new-gri">
                                         <div class="grid-img">
                                             <img  src="{{asset($newProduct->product_image)}}" class="img-responsive" alt="">
                                         </div>

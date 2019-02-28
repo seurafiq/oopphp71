@@ -54,7 +54,7 @@
                 </div>
                 <div class="header-right2">
                     <div class="cart box_1">
-                        <a href="checkout.html">
+                        <a href="{{route('show-cart')}}">
                             <h3> <div class="total">
                                     <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
                                 <img src="{{asset('/')}}/front-end/images/bag.png" alt="" />

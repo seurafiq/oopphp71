@@ -18,13 +18,13 @@
                             <div class="single-left">
                                 <div class="flexslider">
                                     <ul class="slides">
-                                        <li data-thumb="{{asset('/')}}/front-end/images/si.jpg">
+                                        <li data-thumb="{{asset($product->product_image)}}">
                                             <div class="thumb-image"> <img src="{{asset($product->product_image)}}" data-imagezoom="true" class="img-responsive"> </div>
                                         </li>
-                                        <li data-thumb="{{asset('/')}}/front-end/images/si1.jpg">
+                                        <li data-thumb="{{asset($product->product_image)}}">
                                             <div class="thumb-image"> <img src="{{asset($product->product_image)}}" data-imagezoom="true" class="img-responsive"> </div>
                                         </li>
-                                        <li data-thumb="{{asset('/')}}/front-end/images/si2.jpg">
+                                        <li data-thumb="{{asset($product->product_image)}}">
                                             <div class="thumb-image"> <img src="{{asset($product->product_image)}}" data-imagezoom="true" class="img-responsive"> </div>
                                         </li>
                                     </ul>
@@ -37,35 +37,25 @@
                                 </div>
                                 <p class="price item_price">{{ $product->product_price }}</p>
                                 <div class="description">
-                                    <p><span>Quick Overview : </span> $product->short_description</p>
+                                    <p><span>Quick Overview : </span> {{($product->short_description)}}</p>
                                 </div>
+
+
+                                {{ Form::open(['route'=>'add-to-cart', 'method'=>'POST']) }}
                                 <div class="color-quality">
                                     <h6>Quality :</h6>
                                     <div class="quantity">
-                                        <div class="quantity-select">
-                                            <div class="entry value-minus1">&nbsp;</div>
-                                            <div class="entry value1"><span>1</span></div>
-                                            <div class="entry value-plus1 active">&nbsp;</div>
-                                        </div>
+                                       <input type="number" name="qty" value="1" min="1"/>
+                                       <input type="hidden" name="id" value="{{ $product->id }}"/>
                                     </div>
-                                    <!--quantity-->
-                                    <script>
-                                        $('.value-plus1').on('click', function(){
-                                            var divUpd = $(this).parent().find('.value1'), newVal = parseInt(divUpd.text(), 10)+1;
-                                            divUpd.text(newVal);
-                                        });
-
-                                        $('.value-minus1').on('click', function(){
-                                            var divUpd = $(this).parent().find('.value1'), newVal = parseInt(divUpd.text(), 10)-1;
-                                            if(newVal>=1) divUpd.text(newVal);
-                                        });
-                                    </script>
-                                    <!--quantity-->
                                 </div>
                                 <div class="women">
                                     <span class="size">XL / XXL / S </span>
-                                    <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+                                    <input type="submit" name="btn" value="Add to Cart" class="my-cart-b item_add"/>
                                 </div>
+
+                                {{ Form::close() }}
+
                                 <div class="social-icon">
                                     <a href="#"><i class="icon"></i></a>
                                     <a href="#"><i class="icon1"></i></a>

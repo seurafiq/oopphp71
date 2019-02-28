@@ -101,4 +101,57 @@ class ProductController extends Controller
         //return $products;
         return view('admin.product.manage-product', ['products'=>$products]);
     }
+    public function editProduct($id){
+        $product = Product::find($id);
+        $categories = Category::where('publication_status', 1)->get();
+        $brands = Brand::where('publication_status', 1)->get();
+        return view('admin.product.edit-product', [
+            'product'=>$product,
+            'categories'=>$categories,
+            'brands'=>$brands,
+        ]);
+
+    }
+
+
+    /*For update starts here*/
+    public function productBasicInfoUpdate($product,$request,$imageUrl=null){
+        $product->category_id = $request->category_id;
+        $product->brand_id = $request->brand_id;
+        $product->product_name = $request->product_name;
+        $product->product_price = $request->product_price;
+        $product->product_quantity = $request->product_quantity;
+        $product->short_description = $request->short_description;
+        $product->long_description = $request->long_description;
+        if ($imageUrl){
+            $product->product_image = $imageUrl;
+        }
+
+        $product->publication_status = $request->publication_status;
+        $product->save();
+
+    }
+
+
+    public function updateProduct(Request $request){
+        $productImage = $request->file('product_image');
+        $product = Product::find($request->product_id);
+        if($productImage){
+
+            unlink($product->product_image);
+
+
+            $imageUrl = $this->productImageUpload($request);
+            $this->productBasicInfoUpdate($product,$request,$imageUrl);
+
+        }else{
+
+            $this->productBasicInfoUpdate($product,$request);
+        }
+        return redirect('/product/manage')->with('message', 'product info updated');
+
+    }
+    /*For update ends here*/
+
+
 }
